@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="block.png">
+    <title>RBAS rs sync</title>
+    <style>
+        * {
+            font-family: 'Roboto', monospace;
+            background-color: rgb(0, 0, 0);
+            font-size: 12.6px;
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            margin: 0;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            min-width: 3500px;
+        }
+
+        header {
+            min-width: 3500px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .logo {
+            font-size: 6rem;
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            padding: 2mm;
+            padding-left: 10mm;
+            background: #404040;
+            color: rgb(50, 160, 240);
+        }
+
+        .navigation-menu {
+            width: 100%;
+            display: flex;
+            background: #404040;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .navigation-menu a {
+            margin: 30px;
+            color: rgb(90, 240, 240);
+            text-transform: uppercase;
+            font-size: 3rem;
+            background: #404040;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .navigation-menu a:hover {
+            background: #202020;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .navigation-menu a.active {
+            background: rgb(50, 160, 240);
+            color: #000;
+        }
+
+        .top {
+            margin: 0;
+            width: 100%;
+        }
+
+        .top3 {
+            margin: 5mm;
+            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2mm;
+        }
+
+        .top9 {
+            margin: 0.8mm;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            padding-bottom: 0;
+            gap: 0.8mm;
+        }
+
+        .col_1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .col_3 {
+            margin: 0.8mm;
+            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8mm;
+        }
+
+        h1 {
+            color: rgb(50, 160, 240);
+            text-align: left;
+            font-size: 4em;
+            margin: 2mm;
+            margin-left: 20mm;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            text-align: right;
+            font-size: 1.8em;
+            margin-right: 50mm;
+            margin-top: 5mm;
+            color: rgb(200, 200, 200);
+        }
+
+        h3 {
+            color: rgb(90, 240, 240);
+            text-align: left;
+            font-size: 3em;
+            margin: 3mm;
+            margin-left: 30mm;
+        }
+
+        h4 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            width: 70%;
+            text-align: center;
+            font-size: 8rem;
+            margin-left: 30mm;
+            margin-top: 1mm;
+            margin-bottom: 2mm;
+            padding: 7mm;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        h4.tick {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+        }
+
+        h4.tick.updated {
+            background-color: rgb(50, 160, 240);
+            animation: pulse 0.5s ease;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h5 {
+            color: rgb(90, 240, 240);
+            text-align: center;
+            font-size: 1.6rem;
+            margin: 0.8mm;
+            margin-right: 2.4mm;
+            margin-left: 4mm;
+            font-weight: bold;
+        }
+
+        h6 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 1.6px;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        h6.rs_tick {
+            color: rgb(255, 255, 255);
+            background-color: rgb(40, 40, 40);
+        }
+
+        h6.chain {
+            color: rgb(255, 255, 255);
+            background-color: rgb(40, 40, 40);
+        }
+
+        h6.next_chain {
+            color: rgb(255, 255, 255);
+            background-color: rgb(40, 40, 40);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-left: 10px;
+            background-color: #ff4444;
+            transition: background-color 0.3s ease;
+        }
+
+        .status-indicator.online {
+            background-color: #44ff44;
+            box-shadow: 0 0 10px #44ff44;
+        }
+
+        .status-indicator.warning {
+            background-color: #ffff44;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 1.6rem;
+            text-align: center;
+            padding: 16px;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">RBAS dashboard <span class="status-indicator" id="status-indicator"></span></div>
+        <nav class="navigation-menu">
+            <a href="index.html" class="active">RS sync</a>
+            <a href="db_sync.html">DB sync</a>
+            <a href="db_operation.html">DB operation</a>
+            <a href="ps_summary.html">PS summary</a>
+            <a href="db_16.html">DB 16</a>
+            <a href="db_summary.html">DB summary</a>
+        </nav>
+    </header>
+
+    <div class="grid">
+        <div class="top">
+            <div class="col_1">
+                <div class="top3">
+                    <h1 id="title">RBAS 心跳同步</h1>
+                    <div></div>
+                    <h2 id="version">RBAS_poll_RS_working</h2>
+                    <h1 id="start_time">start 2022-01-01</h1>
+                    <div></div>
+                    <h1 id="rbas_time">12:23:45</h1>
+
+                    <div class="col_1">
+                        <h3>RS_0</h3>
+                        <h4 class="tick" id="tick-0">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_1</h3>
+                        <h4 class="tick" id="tick-1">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_2</h3>
+                        <h4 class="tick" id="tick-2">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_3</h3>
+                        <h4 class="tick" id="tick-3">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_4</h3>
+                        <h4 class="tick" id="tick-4">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_5</h3>
+                        <h4 class="tick" id="tick-5">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_6</h3>
+                        <h4 class="tick" id="tick-6">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_7</h3>
+                        <h4 class="tick" id="tick-7">1234567890</h4>
+                    </div>
+                    <div class="col_1">
+                        <h3>RS_8</h3>
+                        <h4 class="tick" id="tick-8">1234567890</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col_1">
+                <h1>each RS - log 日誌</h1>
+                <div class="error-message" id="error-message">Connection Error - Retrying...</div>
+                <div class="top9" id="rs-logs-container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateRSLogs() {
+            const container = document.getElementById('rs-logs-container');
+            let html = '';
+
+            for (let rs = 0; rs < 9; rs++) {
+                html += `<div class="col_1">
+                    <h3>RS_${rs}</h3>
+                    <div class="col_3">
+                        <h5>tick</h5>
+                        <h5>chain</h5>
+                        <h5>next_chain</h5>
+                    </div>`;
+
+                for (let col = 0; col < 3; col++) {
+                    html += '<div class="col_3">';
+                    for (let row = 0; row < 10; row++) {
+                        const index = row + col * 10 + rs * 30;
+                        html += `<h6 class="rs_tick" data-rs="${rs}" data-row="${row + col * 10}">.</h6>
+                                 <h6 class="chain" data-rs="${rs}" data-row="${row + col * 10}">.</h6>
+                                 <h6 class="next_chain" data-rs="${rs}" data-row="${row + col * 10}">.</h6>`;
+                    }
+                    html += '</div>';
+                }
+
+                html += '</div>';
+            }
+
+            container.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', generateRSLogs);
+    </script>
+    <script src="1web_rs_sync.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,473 @@
+{
+  "tick": 1000000548,
+  "cycle_number": 17,
+  "phase": "INDIVIDUAL",
+  "ps_threads": [
+    137,
+    137,
+    135,
+    131,
+    131
+  ],
+  "ts_threads": [
+    [
+      69,
+      69,
+      69
+    ],
+    [
+      69,
+      69,
+      69
+    ],
+    [
+      69,
+      69,
+      67
+    ],
+    [
+      67,
+      67,
+      67
+    ],
+    [
+      67,
+      67,
+      67
+    ]
+  ],
+  "ps_chains": [
+    "cab63fe9",
+    "02aa4fef",
+    "02f83de7",
+    "2b049917",
+    "67b91f58"
+  ],
+  "ts_chains": [
+    [
+      "8ba30675",
+      "021da33d",
+      "70428d89"
+    ],
+    [
+      "f8b6bcec",
+      "492a8e05",
+      "cdbc31e6"
+    ],
+    [
+      "b215fda5",
+      "10a03fcb",
+      "42332cb8"
+    ],
+    [
+      "83a3968f",
+      "0c24290b",
+      "52f9c6dd"
+    ],
+    [
+      "e815584a",
+      "85b05fb2",
+      "c202d83b"
+    ]
+  ],
+  "ps_next_chains": [
+    "cab63fe9",
+    "02aa4fef",
+    "02f83de7",
+    "2b049917",
+    "67b91f58"
+  ],
+  "ts_next_chains": [
+    [
+      "8ba30675",
+      "021da33d",
+      "70428d89"
+    ],
+    [
+      "f8b6bcec",
+      "492a8e05",
+      "cdbc31e6"
+    ],
+    [
+      "b215fda5",
+      "10a03fcb",
+      "42332cb8"
+    ],
+    [
+      "83a3968f",
+      "0c24290b",
+      "52f9c6dd"
+    ],
+    [
+      "e815584a",
+      "85b05fb2",
+      "c202d83b"
+    ]
+  ],
+  "created_nfts": [
+    [
+      "71c104ba0600ce025ca3199334354cc822b59a9eb68254ddd590566e2973389e",
+      "24bc37979eada8456afbaa1ed3f35c8672e103603f89e40d226f7b9f031731de",
+      "d3dc768a1f70954e7e15dafeea82671d53f6bf98c3ab168b312cc72f1b6757c8"
+    ],
+    [
+      "14c5a7c0aae502925deda7e9ccf17e8acc0567857d5cce6efc2449a3a48dded9",
+      "e5eacf9266b4c9f8ed67746c18b7d0d86536b40ab149f45538cf9e51c67ee4a4",
+      "309a3a2303ad443128c9f3be0f0bdeff5928a8408d74dc5754fcf69b9ca19e5c"
+    ],
+    [
+      "d074fd5f6c14c3917bb36be79f55679e6e5007e6198697b64e176d1f0ad4a075",
+      "e90b055b56fb937f65672d230db5db2bc158b7ab04b4a74bbfdb580f33f4ec0a",
+      "d0f30efc939515cb7540568a9eacf145c49df75353686590d965ee1f4d9aa0c2"
+    ],
+    [
+      "7dbda8a00a5f848a761453f4ff502844d6c236ff4f51f35557658405f7623082",
+      "25db49408c744478acf6121235fb9928bb353b2e056a8884a162ed3f34a8d61a",
+      "4126df259170a3dc57c36539941c2f8571eac4333e2c7fcb0191326db5feeafb"
+    ],
+    [
+      "1e2db7880549f4a5ae4e1d5df464ccb1d42225628015371df619197117676593",
+      "f809c8a2a0d8d3e7a0d807c599176779afc1679a72cc54546faa36552f7635c3",
+      "c8917068b8b30733115f17d5bdcb71c640f7df7d5d7eb48de5302be2992d3e22"
+    ]
+  ],
+  "sys_disp": [
+    {
+      "time": "Jun 05 2026 18:24:30",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000528,
+      "dbio_link": "conn",
+      "tx": 512,
+      "rx": 512
+    },
+    {
+      "time": "Jun 05 2026 18:24:31",
+      "phase": "BATCH_INPUT",
+      "ps_id": 0,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000529,
+      "dbio_link": "conn",
+      "tx": 512,
+      "rx": 512
+    },
+    {
+      "time": "Jun 05 2026 18:24:32",
+      "phase": "BATCH_QUERY",
+      "ps_id": 0,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000530,
+      "dbio_link": "conn",
+      "tx": 513,
+      "rx": 513
+    },
+    {
+      "time": "Jun 05 2026 18:24:33",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000531,
+      "dbio_link": "conn",
+      "tx": 514,
+      "rx": 514
+    },
+    {
+      "time": "Jun 05 2026 18:24:34",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 0,
+      "service": "QUERY",
+      "tick": 1000000532,
+      "dbio_link": "conn",
+      "tx": 515,
+      "rx": 515
+    },
+    {
+      "time": "Jun 05 2026 18:24:35",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 1,
+      "service": "INPUT",
+      "tick": 1000000533,
+      "dbio_link": "conn",
+      "tx": 516,
+      "rx": 516
+    },
+    {
+      "time": "Jun 05 2026 18:24:36",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 1,
+      "service": "QUERY",
+      "tick": 1000000534,
+      "dbio_link": "conn",
+      "tx": 517,
+      "rx": 517
+    },
+    {
+      "time": "Jun 05 2026 18:24:37",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 2,
+      "service": "INPUT",
+      "tick": 1000000535,
+      "dbio_link": "conn",
+      "tx": 518,
+      "rx": 518
+    },
+    {
+      "time": "Jun 05 2026 18:24:38",
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 2,
+      "service": "QUERY",
+      "tick": 1000000536,
+      "dbio_link": "conn",
+      "tx": 519,
+      "rx": 519
+    },
+    {
+      "time": "Jun 05 2026 18:24:39",
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000537,
+      "dbio_link": "conn",
+      "tx": 520,
+      "rx": 520
+    },
+    {
+      "time": "Jun 05 2026 18:24:40",
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 0,
+      "service": "QUERY",
+      "tick": 1000000538,
+      "dbio_link": "conn",
+      "tx": 521,
+      "rx": 521
+    },
+    {
+      "time": "Jun 05 2026 18:24:41",
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 1,
+      "service": "INPUT",
+      "tick": 1000000539,
+      "dbio_link": "conn",
+      "tx": 522,
+      "rx": 522
+    },
+    {
+      "time": "Jun 05 2026 18:24:42",
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 1,
+      "service": "QUERY",
+      "tick": 1000000540,
+      "dbio_link": "conn",
+      "tx": 523,
+      "rx": 523
+    },
+    {
+      "time": "Jun 05 2026 18:24:43",
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 2,
+      "service": "INPUT",
+      "tick": 1000000541,
+      "dbio_link": "conn",
+      "tx": 524,
+      "rx": 524
+    },
+    {
+      "time": "Jun 05 2026 18:24:44",
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 2,
+      "service": "QUERY",
+      "tick": 1000000542,
+      "dbio_link": "conn",
+      "tx": 525,
+      "rx": 525
+    },
+    {
+      "time": "Jun 05 2026 18:24:45",
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000543,
+      "dbio_link": "conn",
+      "tx": 526,
+      "rx": 526
+    },
+    {
+      "time": "Jun 05 2026 18:24:46",
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 0,
+      "service": "QUERY",
+      "tick": 1000000544,
+      "dbio_link": "conn",
+      "tx": 527,
+      "rx": 527
+    },
+    {
+      "time": "Jun 05 2026 18:24:47",
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 1,
+      "service": "INPUT",
+      "tick": 1000000545,
+      "dbio_link": "conn",
+      "tx": 528,
+      "rx": 528
+    },
+    {
+      "time": "Jun 05 2026 18:24:48",
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 1,
+      "service": "QUERY",
+      "tick": 1000000546,
+      "dbio_link": "conn",
+      "tx": 529,
+      "rx": 529
+    },
+    {
+      "time": "Jun 05 2026 18:24:49",
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 2,
+      "service": "INPUT",
+      "tick": 1000000547,
+      "dbio_link": " ... ",
+      "tx": 530,
+      "rx": 530
+    },
+    {
+      "time": "Jun 05 2026 18:24:50",
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 2,
+      "service": "INPUT",
+      "tick": 1000000548,
+      "dbio_link": " ... ",
+      "tx": 530,
+      "rx": 530
+    },
+    {
+      "time": "Jun 05 2026 18:24:21",
+      "phase": "INDIVIDUAL",
+      "ps_id": 3,
+      "ts_id": 1,
+      "service": "QUERY",
+      "tick": 1000000519,
+      "dbio_link": "conn",
+      "tx": 503,
+      "rx": 503
+    },
+    {
+      "time": "Jun 05 2026 18:24:22",
+      "phase": "INDIVIDUAL",
+      "ps_id": 3,
+      "ts_id": 2,
+      "service": "INPUT",
+      "tick": 1000000520,
+      "dbio_link": "conn",
+      "tx": 504,
+      "rx": 504
+    },
+    {
+      "time": "Jun 05 2026 18:24:23",
+      "phase": "INDIVIDUAL",
+      "ps_id": 3,
+      "ts_id": 2,
+      "service": "QUERY",
+      "tick": 1000000521,
+      "dbio_link": "conn",
+      "tx": 505,
+      "rx": 505
+    },
+    {
+      "time": "Jun 05 2026 18:24:24",
+      "phase": "INDIVIDUAL",
+      "ps_id": 4,
+      "ts_id": 0,
+      "service": "INPUT",
+      "tick": 1000000522,
+      "dbio_link": "conn",
+      "tx": 506,
+      "rx": 506
+    },
+    {
+      "time": "Jun 05 2026 18:24:25",
+      "phase": "INDIVIDUAL",
+      "ps_id": 4,
+      "ts_id": 0,
+      "service": "QUERY",
+      "tick": 1000000523,
+      "dbio_link": "conn",
+      "tx": 507,
+      "rx": 507
+    },
+    {
+      "time": "Jun 05 2026 18:24:26",
+      "phase": "INDIVIDUAL",
+      "ps_id": 4,
+      "ts_id": 1,
+      "service": "INPUT",
+      "tick": 1000000524,
+      "dbio_link": "conn",
+      "tx": 508,
+      "rx": 508
+    },
+    {
+      "time": "Jun 05 2026 18:24:27",
+      "phase": "INDIVIDUAL",
+      "ps_id": 4,
+      "ts_id": 1,
+      "service": "QUERY",
+      "tick": 1000000525,
+      "dbio_link": "conn",
+      "tx": 509,
+      "rx": 509
+    },
+    {
+      "time": "Jun 05 2026 18:24:28",
+      "phase": "INDIVIDUAL",
+      "ps_id": 4,
+      "ts_id": 2,
+      "service": "INPUT",
+      "tick": 1000000526,
+      "dbio_link": "conn",
+      "tx": 510,
+      "rx": 510
+    },
+    {
+      "time": "Jun 05 2026 18:24:29",
+      "phase": "INDIVIDUAL",
+      "ps_id": 4,
+      "ts_id": 2,
+      "service": "QUERY",
+      "tick": 1000000527,
+      "dbio_link": "conn",
+      "tx": 511,
+      "rx": 511
+    }
+  ],
+  "stats": {
+    "total_inputs": 503,
+    "total_queries": 4507,
+    "total_errors": 0,
+    "created_nfts": 503,
+    "final_tick": 1000000548
+  }
+}

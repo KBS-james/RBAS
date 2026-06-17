@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="block.png">
+    <title>RBAS DB operation</title>
+    <style>
+        * {
+            font-family: 'Roboto', monospace;
+            background-color: rgb(0, 0, 0);
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            margin: 0;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            min-width: 3500px;
+        }
+
+        header {
+            min-width: 3500px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .logo {
+            font-size: 6rem;
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            padding: 2mm;
+            padding-left: 10mm;
+            background: #404040;
+            color: rgb(50, 160, 240);
+        }
+
+        .navigation-menu {
+            width: 100%;
+            display: flex;
+            background: #404040;
+            align-items: center;
+        }
+
+        .navigation-menu a {
+            margin: 15px;
+            color: rgb(90, 240, 240);
+            text-transform: uppercase;
+            font-size: 2rem;
+            background: #404040;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .navigation-menu a:hover {
+            background: #202020;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .navigation-menu a.active {
+            background: rgb(50, 160, 240);
+            color: #000;
+        }
+
+        .top {
+            margin: 0;
+            width: 100%;
+        }
+
+        .top_2 {
+            grid-column: 2/6;
+            border: 1px solid rgb(3, 3, 3);
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            text-align: center;
+            margin: 0;
+        }
+
+        .top4 {
+            display: grid;
+            margin: 0;
+            grid-template-columns: repeat(4, 1fr);
+            width: 99%;
+        }
+
+        .top5 {
+            display: grid;
+            margin: 1mm;
+            padding: 2mm;
+            padding-top: 6mm;
+            padding-bottom: 4mm;
+            grid-template-columns: repeat(5, 1fr);
+            width: 99%;
+        }
+
+        .col_1 {
+            margin: 1mm;
+            padding: 2mm;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .col_2 {
+            grid-column: 3/5;
+            margin: 1mm;
+            padding: 2mm;
+            padding-top: 0;
+        }
+
+        .col_3 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 1mm;
+        }
+
+        .col_9 {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            margin: 1mm;
+        }
+
+        h1 {
+            color: rgb(50, 160, 240);
+            text-align: left;
+            font-size: 4em;
+            padding-left: 10mm;
+        }
+
+        h2 {
+            color: rgb(90, 240, 240);
+            text-align: left;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        h3 {
+            color: rgb(90, 240, 240);
+            text-align: right;
+            font-size: 1.5em;
+            margin: 0;
+            padding-right: 3mm;
+        }
+
+        h4 {
+            color: rgb(90, 240, 240);
+            text-align: center;
+            font-size: 3em;
+            margin: 10mm;
+            margin-top: 5mm;
+        }
+
+        h5 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(40, 40, 40);
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0.5mm;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        h6 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 0;
+            margin-top: 10mm;
+            color: rgb(200, 200, 200);
+        }
+
+        h5:hover {
+            background-color: rgb(80, 80, 80);
+            transform: scale(1.05);
+            z-index: 10;
+            position: relative;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-left: 10px;
+            background-color: #ff4444;
+            transition: background-color 0.3s ease;
+        }
+
+        .status-indicator.online {
+            background-color: #44ff44;
+            box-shadow: 0 0 10px #44ff44;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">RBAS dashboard <span class="status-indicator" id="status-indicator"></span></div>
+        <nav class="navigation-menu">
+            <a href="index.html">RS sync</a>
+            <a href="db_sync.html">DB sync</a>
+            <a href="db_operation.html" class="active">DB operation</a>
+            <a href="ps_summary.html">PS summary</a>
+            <a href="db_16.html">DB 16</a>
+            <a href="db_summary.html">DB summary</a>
+        </nav>
+    </header>
+
+    <div class="grid">
+        <div class="top">
+            <div class="top4">
+                <h1 id="title">RBAS 數據庫操作</h1>
+                <h1 id="time">2020-02-10 12:34:56</h1>
+                <div>
+                    <br><br><br>
+                    <h2>ps_0.(ts_0 .. ts_9) ... ps_4.(ts_0 .. ts_9)</h2>
+                </div>
+                <h6 id="version">RBAS_poll_RS_working</h6>
+            </div>
+
+            <!-- PS 0 -->
+            <div class="top4">
+                <div class="col_1">
+                    <div class="top5">
+                        <h4>ps-0</h4>
+                        <div class="top_2">
+                            <h3>ps_thread</h3>
+                            <h5 class="ps_thread">.</h5>
+                            <h3>ps_chain</h3>
+                            <h5 class="chain">.</h5>
+                            <h3>next_chain</h3>
+                            <h5 class="next_chain">.</h5>
+                        </div>
+                        <div class="top_2">
+                            <h3>input_total</h3>
+                            <h5 class="input_total">.</h5>
+                            <h3>input_error</h3>
+                            <h5 class="input_error">.</h5>
+                            <h3>query_total</h3>
+                            <h5 class="query_total">.</h5>
+                            <h3>query_error</h3>
+                            <h5 class="query_error">.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_1">
+                    <div class="col_3">
+                        <h2>time</h2>
+                        <h2>ps_thread</h2>
+                        <h2>ps_chain</h2>
+                        <h2>next_chain</h2>
+                    </div>
+                    <div class="col_3">
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                    </div>
+                </div>
+                <div class="col_2">
+                    <div class="col_9">
+                        <h2>ts_id</h2><h2>ts_thread</h2><h2>NFT</h2><h2>service</h2><h2>result_id</h2><h2>in_total</h2><h2>in_err</h2><h2>q_total</h2><h2>q_err</h2>
+                    </div>
+                    <div class="col_9">
+                        <h5 class="ts_id">0</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">1</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">2</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">3</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">4</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">5</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">6</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">7</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">8</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">9</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PS 1 -->
+            <div class="top4">
+                <div class="col_1">
+                    <div class="top5">
+                        <h4>ps-1</h4>
+                        <div class="top_2">
+                            <h3>ps_thread</h3>
+                            <h5 class="ps_thread">.</h5>
+                            <h3>ps_chain</h3>
+                            <h5 class="chain">.</h5>
+                            <h3>next_chain</h3>
+                            <h5 class="next_chain">.</h5>
+                        </div>
+                        <div class="top_2">
+                            <h3>input_total</h3>
+                            <h5 class="input_total">.</h5>
+                            <h3>input_error</h3>
+                            <h5 class="input_error">.</h5>
+                            <h3>query_total</h3>
+                            <h5 class="query_total">.</h5>
+                            <h3>query_error</h3>
+                            <h5 class="query_error">.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_1">
+                    <div class="col_3">
+                        <h2>time</h2><h2>ps_thread</h2><h2>ps_chain</h2><h2>next_chain</h2>
+                    </div>
+                    <div class="col_3">
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                    </div>
+                </div>
+                <div class="col_2">
+                    <div class="col_9">
+                        <h2>ts_id</h2><h2>ts_thread</h2><h2>NFT</h2><h2>service</h2><h2>result_id</h2><h2>in_total</h2><h2>in_err</h2><h2>q_total</h2><h2>q_err</h2>
+                    </div>
+                    <div class="col_9">
+                        <h5 class="ts_id">0</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">1</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">2</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">3</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">4</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">5</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">6</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">7</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">8</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">9</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PS 2 -->
+            <div class="top4">
+                <div class="col_1">
+                    <div class="top5">
+                        <h4>ps-2</h4>
+                        <div class="top_2">
+                            <h3>ps_thread</h3>
+                            <h5 class="ps_thread">.</h5>
+                            <h3>ps_chain</h3>
+                            <h5 class="chain">.</h5>
+                            <h3>next_chain</h3>
+                            <h5 class="next_chain">.</h5>
+                        </div>
+                        <div class="top_2">
+                            <h3>input_total</h3>
+                            <h5 class="input_total">.</h5>
+                            <h3>input_error</h3>
+                            <h5 class="input_error">.</h5>
+                            <h3>query_total</h3>
+                            <h5 class="query_total">.</h5>
+                            <h3>query_error</h3>
+                            <h5 class="query_error">.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_1">
+                    <div class="col_3">
+                        <h2>time</h2><h2>ps_thread</h2><h2>ps_chain</h2><h2>next_chain</h2>
+                    </div>
+                    <div class="col_3">
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                    </div>
+                </div>
+                <div class="col_2">
+                    <div class="col_9">
+                        <h2>ts_id</h2><h2>ts_thread</h2><h2>NFT</h2><h2>service</h2><h2>result_id</h2><h2>in_total</h2><h2>in_err</h2><h2>q_total</h2><h2>q_err</h2>
+                    </div>
+                    <div class="col_9">
+                        <h5 class="ts_id">0</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">1</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">2</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">3</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">4</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">5</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">6</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">7</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">8</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">9</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PS 3 -->
+            <div class="top4">
+                <div class="col_1">
+                    <div class="top5">
+                        <h4>ps-3</h4>
+                        <div class="top_2">
+                            <h3>ps_thread</h3>
+                            <h5 class="ps_thread">.</h5>
+                            <h3>ps_chain</h3>
+                            <h5 class="chain">.</h5>
+                            <h3>next_chain</h3>
+                            <h5 class="next_chain">.</h5>
+                        </div>
+                        <div class="top_2">
+                            <h3>input_total</h3>
+                            <h5 class="input_total">.</h5>
+                            <h3>input_error</h3>
+                            <h5 class="input_error">.</h5>
+                            <h3>query_total</h3>
+                            <h5 class="query_total">.</h5>
+                            <h3>query_error</h3>
+                            <h5 class="query_error">.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_1">
+                    <div class="col_3">
+                        <h2>time</h2><h2>ps_thread</h2><h2>ps_chain</h2><h2>next_chain</h2>
+                    </div>
+                    <div class="col_3">
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                    </div>
+                </div>
+                <div class="col_2">
+                    <div class="col_9">
+                        <h2>ts_id</h2><h2>ts_thread</h2><h2>NFT</h2><h2>service</h2><h2>result_id</h2><h2>in_total</h2><h2>in_err</h2><h2>q_total</h2><h2>q_err</h2>
+                    </div>
+                    <div class="col_9">
+                        <h5 class="ts_id">0</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">1</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">2</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">3</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">4</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">5</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">6</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">7</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">8</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">9</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PS 4 -->
+            <div class="top4">
+                <div class="col_1">
+                    <div class="top5">
+                        <h4>ps-4</h4>
+                        <div class="top_2">
+                            <h3>ps_thread</h3>
+                            <h5 class="ps_thread">.</h5>
+                            <h3>ps_chain</h3>
+                            <h5 class="chain">.</h5>
+                            <h3>next_chain</h3>
+                            <h5 class="next_chain">.</h5>
+                        </div>
+                        <div class="top_2">
+                            <h3>input_total</h3>
+                            <h5 class="input_total">.</h5>
+                            <h3>input_error</h3>
+                            <h5 class="input_error">.</h5>
+                            <h3>query_total</h3>
+                            <h5 class="query_total">.</h5>
+                            <h3>query_error</h3>
+                            <h5 class="query_error">.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_1">
+                    <div class="col_3">
+                        <h2>time</h2><h2>ps_thread</h2><h2>ps_chain</h2><h2>next_chain</h2>
+                    </div>
+                    <div class="col_3">
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                        <h5 class="log_time">.</h5><h5 class="log_ps_thread">.</h5><h5 class="log_chain">.</h5><h5 class="log_next_chain">.</h5>
+                    </div>
+                </div>
+                <div class="col_2">
+                    <div class="col_9">
+                        <h2>ts_id</h2><h2>ts_thread</h2><h2>NFT</h2><h2>service</h2><h2>result_id</h2><h2>in_total</h2><h2>in_err</h2><h2>q_total</h2><h2>q_err</h2>
+                    </div>
+                    <div class="col_9">
+                        <h5 class="ts_id">0</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">1</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">2</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">3</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">4</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">5</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">6</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">7</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">8</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                        <h5 class="ts_id">9</h5><h5 class="thread">.</h5><h5 class="nft">.</h5><h5 class="service">.</h5><h5 class="result_id">.</h5><h5 class="in_total">.</h5><h5 class="in_err">.</h5><h5 class="q_total">.</h5><h5 class="q_err">.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="4web_db_operation.js"></script>
+</body>
+</html>

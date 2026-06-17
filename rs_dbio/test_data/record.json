@@ -1,0 +1,3038 @@
+{
+  "start_time": "2026-06-05T10:49:38.558Z",
+  "cycle_number": 2,
+  "records": [
+    {
+      "timestamp": 1780656579556,
+      "tick": 1000000036,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 0,
+      "service": "INPUT",
+      "ps_request": [
+        {
+          "ps_id": 0,
+          "tick": 1000000036,
+          "ps_thread": 11,
+          "ps_chain": "f82aee03",
+          "ps_next_chain": "a1a6cc09",
+          "ts_request": [
+            {
+              "ts_id": 0,
+              "ts_thread": 7,
+              "ts_chain": "0ff8f328",
+              "ts_next_chain": "fa16b87d",
+              "nft": "e9610d1afc272d55ab9245bba13f9042d3cae5647802906e7ce505eaf8c14e24",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000036,
+          "ps_thread": 11,
+          "ps_chain": "f82aee03",
+          "ps_next_chain": "a1a6cc09",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 7,
+              "ts_chain": "0ff8f328",
+              "ts_next_chain": "fa16b87d",
+              "nft": "e9610d1afc272d55ab9245bba13f9042d3cae5647802906e7ce505eaf8c14e24",
+              "service": "input",
+              "result_id": "error"
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "5d850ecb",
+          "ps_next_chain": "759eb111",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "2352c9ba",
+              "ts_next_chain": "4e46cf3d",
+              "nft": "2e50a157225631f37a5e94811ba815eb486045e452975e28ab86493184f0b406",
+              "service": "query",
+              "result_id": "1000000034.1.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "22ed11e8",
+              "ts_next_chain": "583f7702",
+              "nft": "54f7ddbdfc1b309658c336ae3b3372165a737102771445a0ecbfc20ae1388f0c",
+              "service": "query",
+              "result_id": "1000000034.1.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "19a3f5ca",
+              "ts_next_chain": "d7a06bab",
+              "nft": "d95ae59d3310d124cddca0151c2947ea7455721f241090477124c9f4cae0255c",
+              "service": "query",
+              "result_id": "1000000034.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656580557,
+      "tick": 1000000037,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 1,
+      "service": "QUERY",
+      "ps_request": [
+        {
+          "ps_id": 0,
+          "tick": 1000000037,
+          "ps_thread": 12,
+          "ps_chain": "a1a6cc09",
+          "ps_next_chain": "498bfe15",
+          "ts_request": [
+            {
+              "ts_id": 0,
+              "ts_thread": 8,
+              "ts_chain": "fa16b87d",
+              "ts_next_chain": "6ab0c3f0",
+              "nft": "e9610d1afc272d55ab9245bba13f9042d3cae5647802906e7ce505eaf8c14e24",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000037,
+          "ps_thread": 12,
+          "ps_chain": "a1a6cc09",
+          "ps_next_chain": "498bfe15",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 8,
+              "ts_chain": "fa16b87d",
+              "ts_next_chain": "6ab0c3f0",
+              "nft": "e9610d1afc272d55ab9245bba13f9042d3cae5647802906e7ce505eaf8c14e24",
+              "service": "query",
+              "result_id": "1000000036.0.0"
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "5d850ecb",
+          "ps_next_chain": "759eb111",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "2352c9ba",
+              "ts_next_chain": "4e46cf3d",
+              "nft": "2e50a157225631f37a5e94811ba815eb486045e452975e28ab86493184f0b406",
+              "service": "query",
+              "result_id": "1000000034.1.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "22ed11e8",
+              "ts_next_chain": "583f7702",
+              "nft": "54f7ddbdfc1b309658c336ae3b3372165a737102771445a0ecbfc20ae1388f0c",
+              "service": "query",
+              "result_id": "1000000034.1.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "19a3f5ca",
+              "ts_next_chain": "d7a06bab",
+              "nft": "d95ae59d3310d124cddca0151c2947ea7455721f241090477124c9f4cae0255c",
+              "service": "query",
+              "result_id": "1000000034.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "success": true
+    },
+    {
+      "timestamp": 1780656581570,
+      "tick": 1000000038,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 1,
+      "service": "INPUT",
+      "ps_request": [
+        {
+          "ps_id": 0,
+          "tick": 1000000038,
+          "ps_thread": 13,
+          "ps_chain": "498bfe15",
+          "ps_next_chain": "9de13353",
+          "ts_request": [
+            null,
+            {
+              "ts_id": 1,
+              "ts_thread": 7,
+              "ts_chain": "5daf225d",
+              "ts_next_chain": "c58665c6",
+              "nft": "165be1ec4d9dd3fd4a043e888ddf8717d19565c62420d34afb78874718ee5869",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000038,
+          "ps_thread": 13,
+          "ps_chain": "498bfe15",
+          "ps_next_chain": "9de13353",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {
+              "ts_id": 1,
+              "ts_thread": 7,
+              "ts_chain": "5daf225d",
+              "ts_next_chain": "c58665c6",
+              "nft": "165be1ec4d9dd3fd4a043e888ddf8717d19565c62420d34afb78874718ee5869",
+              "service": "input",
+              "result_id": "error"
+            },
+            {}
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "5d850ecb",
+          "ps_next_chain": "759eb111",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "2352c9ba",
+              "ts_next_chain": "4e46cf3d",
+              "nft": "2e50a157225631f37a5e94811ba815eb486045e452975e28ab86493184f0b406",
+              "service": "query",
+              "result_id": "1000000034.1.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "22ed11e8",
+              "ts_next_chain": "583f7702",
+              "nft": "54f7ddbdfc1b309658c336ae3b3372165a737102771445a0ecbfc20ae1388f0c",
+              "service": "query",
+              "result_id": "1000000034.1.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "19a3f5ca",
+              "ts_next_chain": "d7a06bab",
+              "nft": "d95ae59d3310d124cddca0151c2947ea7455721f241090477124c9f4cae0255c",
+              "service": "query",
+              "result_id": "1000000034.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656582578,
+      "tick": 1000000039,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 2,
+      "service": "QUERY",
+      "ps_request": [
+        {
+          "ps_id": 0,
+          "tick": 1000000039,
+          "ps_thread": 14,
+          "ps_chain": "9de13353",
+          "ps_next_chain": "d3175620",
+          "ts_request": [
+            null,
+            {
+              "ts_id": 1,
+              "ts_thread": 8,
+              "ts_chain": "c58665c6",
+              "ts_next_chain": "352bf06a",
+              "nft": "165be1ec4d9dd3fd4a043e888ddf8717d19565c62420d34afb78874718ee5869",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000039,
+          "ps_thread": 14,
+          "ps_chain": "9de13353",
+          "ps_next_chain": "d3175620",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {
+              "ts_id": 1,
+              "ts_thread": 8,
+              "ts_chain": "c58665c6",
+              "ts_next_chain": "352bf06a",
+              "nft": "165be1ec4d9dd3fd4a043e888ddf8717d19565c62420d34afb78874718ee5869",
+              "service": "query",
+              "result_id": "1000000038.0.1"
+            },
+            {}
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "5d850ecb",
+          "ps_next_chain": "759eb111",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "2352c9ba",
+              "ts_next_chain": "4e46cf3d",
+              "nft": "2e50a157225631f37a5e94811ba815eb486045e452975e28ab86493184f0b406",
+              "service": "query",
+              "result_id": "1000000034.1.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "22ed11e8",
+              "ts_next_chain": "583f7702",
+              "nft": "54f7ddbdfc1b309658c336ae3b3372165a737102771445a0ecbfc20ae1388f0c",
+              "service": "query",
+              "result_id": "1000000034.1.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "19a3f5ca",
+              "ts_next_chain": "d7a06bab",
+              "nft": "d95ae59d3310d124cddca0151c2947ea7455721f241090477124c9f4cae0255c",
+              "service": "query",
+              "result_id": "1000000034.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "success": true
+    },
+    {
+      "timestamp": 1780656583581,
+      "tick": 1000000040,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 0,
+      "ts_id": 2,
+      "service": "INPUT",
+      "ps_request": [
+        {
+          "ps_id": 0,
+          "tick": 1000000040,
+          "ps_thread": 15,
+          "ps_chain": "d3175620",
+          "ps_next_chain": "2ec46947",
+          "ts_request": [
+            null,
+            null,
+            {
+              "ts_id": 2,
+              "ts_thread": 7,
+              "ts_chain": "d3bf6ee1",
+              "ts_next_chain": "17c2dc8f",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000040,
+          "ps_thread": 15,
+          "ps_chain": "d3175620",
+          "ps_next_chain": "2ec46947",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 7,
+              "ts_chain": "d3bf6ee1",
+              "ts_next_chain": "17c2dc8f",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "input",
+              "result_id": "error"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "5d850ecb",
+          "ps_next_chain": "759eb111",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "2352c9ba",
+              "ts_next_chain": "4e46cf3d",
+              "nft": "2e50a157225631f37a5e94811ba815eb486045e452975e28ab86493184f0b406",
+              "service": "query",
+              "result_id": "1000000034.1.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "22ed11e8",
+              "ts_next_chain": "583f7702",
+              "nft": "54f7ddbdfc1b309658c336ae3b3372165a737102771445a0ecbfc20ae1388f0c",
+              "service": "query",
+              "result_id": "1000000034.1.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "19a3f5ca",
+              "ts_next_chain": "d7a06bab",
+              "nft": "d95ae59d3310d124cddca0151c2947ea7455721f241090477124c9f4cae0255c",
+              "service": "query",
+              "result_id": "1000000034.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656584580,
+      "tick": 1000000041,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 0,
+      "service": "QUERY",
+      "ps_request": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ts_request": [
+            null,
+            null,
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "5d850ecb",
+          "ps_next_chain": "759eb111",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "2352c9ba",
+              "ts_next_chain": "4e46cf3d",
+              "nft": "2e50a157225631f37a5e94811ba815eb486045e452975e28ab86493184f0b406",
+              "service": "query",
+              "result_id": "1000000034.1.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "22ed11e8",
+              "ts_next_chain": "583f7702",
+              "nft": "54f7ddbdfc1b309658c336ae3b3372165a737102771445a0ecbfc20ae1388f0c",
+              "service": "query",
+              "result_id": "1000000034.1.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "19a3f5ca",
+              "ts_next_chain": "d7a06bab",
+              "nft": "d95ae59d3310d124cddca0151c2947ea7455721f241090477124c9f4cae0255c",
+              "service": "query",
+              "result_id": "1000000034.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "1000000034.1.0",
+      "success": true
+    },
+    {
+      "timestamp": 1780656585579,
+      "tick": 1000000042,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 0,
+      "service": "INPUT",
+      "ps_request": [
+        null,
+        {
+          "ps_id": 1,
+          "tick": 1000000042,
+          "ps_thread": 11,
+          "ps_chain": "759eb111",
+          "ps_next_chain": "6e9c0bf2",
+          "ts_request": [
+            {
+              "ts_id": 0,
+              "ts_thread": 7,
+              "ts_chain": "4e46cf3d",
+              "ts_next_chain": "293c2331",
+              "nft": "7b1993b7ca029ffd23f9a8afbf85949379e4e1a1ae897989d55232026548a102",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000042,
+          "ps_thread": 11,
+          "ps_chain": "759eb111",
+          "ps_next_chain": "6e9c0bf2",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 7,
+              "ts_chain": "4e46cf3d",
+              "ts_next_chain": "293c2331",
+              "nft": "7b1993b7ca029ffd23f9a8afbf85949379e4e1a1ae897989d55232026548a102",
+              "service": "input",
+              "result_id": "error"
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656586582,
+      "tick": 1000000043,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 1,
+      "service": "QUERY",
+      "ps_request": [
+        null,
+        {
+          "ps_id": 1,
+          "tick": 1000000043,
+          "ps_thread": 12,
+          "ps_chain": "6e9c0bf2",
+          "ps_next_chain": "60f81d31",
+          "ts_request": [
+            {
+              "ts_id": 0,
+              "ts_thread": 8,
+              "ts_chain": "293c2331",
+              "ts_next_chain": "3834e661",
+              "nft": "7b1993b7ca029ffd23f9a8afbf85949379e4e1a1ae897989d55232026548a102",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000043,
+          "ps_thread": 12,
+          "ps_chain": "6e9c0bf2",
+          "ps_next_chain": "60f81d31",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 8,
+              "ts_chain": "293c2331",
+              "ts_next_chain": "3834e661",
+              "nft": "7b1993b7ca029ffd23f9a8afbf85949379e4e1a1ae897989d55232026548a102",
+              "service": "query",
+              "result_id": "1000000042.1.0"
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "success": true
+    },
+    {
+      "timestamp": 1780656587581,
+      "tick": 1000000044,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 1,
+      "service": "INPUT",
+      "ps_request": [
+        null,
+        {
+          "ps_id": 1,
+          "tick": 1000000044,
+          "ps_thread": 13,
+          "ps_chain": "60f81d31",
+          "ps_next_chain": "52a532ef",
+          "ts_request": [
+            null,
+            {
+              "ts_id": 1,
+              "ts_thread": 7,
+              "ts_chain": "583f7702",
+              "ts_next_chain": "8568b09b",
+              "nft": "62addbb243e2274cfa2dae8c0c99abf32758d360f5628a7715d53852c561e00c",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000044,
+          "ps_thread": 13,
+          "ps_chain": "60f81d31",
+          "ps_next_chain": "52a532ef",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {
+              "ts_id": 1,
+              "ts_thread": 7,
+              "ts_chain": "583f7702",
+              "ts_next_chain": "8568b09b",
+              "nft": "62addbb243e2274cfa2dae8c0c99abf32758d360f5628a7715d53852c561e00c",
+              "service": "input",
+              "result_id": "error"
+            },
+            {}
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656588582,
+      "tick": 1000000045,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 2,
+      "service": "QUERY",
+      "ps_request": [
+        null,
+        {
+          "ps_id": 1,
+          "tick": 1000000045,
+          "ps_thread": 14,
+          "ps_chain": "52a532ef",
+          "ps_next_chain": "f65aa998",
+          "ts_request": [
+            null,
+            {
+              "ts_id": 1,
+              "ts_thread": 8,
+              "ts_chain": "8568b09b",
+              "ts_next_chain": "31c89511",
+              "nft": "62addbb243e2274cfa2dae8c0c99abf32758d360f5628a7715d53852c561e00c",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000045,
+          "ps_thread": 14,
+          "ps_chain": "52a532ef",
+          "ps_next_chain": "f65aa998",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {
+              "ts_id": 1,
+              "ts_thread": 8,
+              "ts_chain": "8568b09b",
+              "ts_next_chain": "31c89511",
+              "nft": "62addbb243e2274cfa2dae8c0c99abf32758d360f5628a7715d53852c561e00c",
+              "service": "query",
+              "result_id": "1000000044.1.1"
+            },
+            {}
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "success": true
+    },
+    {
+      "timestamp": 1780656589583,
+      "tick": 1000000046,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 1,
+      "ts_id": 2,
+      "service": "INPUT",
+      "ps_request": [
+        null,
+        {
+          "ps_id": 1,
+          "tick": 1000000046,
+          "ps_thread": 15,
+          "ps_chain": "f65aa998",
+          "ps_next_chain": "edc46929",
+          "ts_request": [
+            null,
+            null,
+            {
+              "ts_id": 2,
+              "ts_thread": 7,
+              "ts_chain": "d7a06bab",
+              "ts_next_chain": "6117b00d",
+              "nft": "8554e3d40ab8817b547aff8b12c556266cc2f9e676db9cf4e295b47c1a6875f0",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000046,
+          "ps_thread": 15,
+          "ps_chain": "f65aa998",
+          "ps_next_chain": "edc46929",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 7,
+              "ts_chain": "d7a06bab",
+              "ts_next_chain": "6117b00d",
+              "nft": "8554e3d40ab8817b547aff8b12c556266cc2f9e676db9cf4e295b47c1a6875f0",
+              "service": "input",
+              "result_id": "error"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656590587,
+      "tick": 1000000047,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 0,
+      "service": "QUERY",
+      "ps_request": [
+        null,
+        {
+          "ps_id": 1,
+          "tick": 1000000047,
+          "ps_thread": 16,
+          "ps_chain": "edc46929",
+          "ps_next_chain": "876290f7",
+          "ts_request": [
+            null,
+            null,
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "6117b00d",
+              "ts_next_chain": "7f54e6e1",
+              "nft": "8554e3d40ab8817b547aff8b12c556266cc2f9e676db9cf4e295b47c1a6875f0",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000047,
+          "ps_thread": 16,
+          "ps_chain": "edc46929",
+          "ps_next_chain": "876290f7",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "6117b00d",
+              "ts_next_chain": "7f54e6e1",
+              "nft": "8554e3d40ab8817b547aff8b12c556266cc2f9e676db9cf4e295b47c1a6875f0",
+              "service": "query",
+              "result_id": "1000000046.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "66e0cc2a",
+          "ps_next_chain": "8040cbdb",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "6225af33",
+              "ts_next_chain": "a031b3a3",
+              "nft": "7b1c13df7326d766abf7623a09d60db94b8f315590df31efec9222a39ffa6c90",
+              "service": "query",
+              "result_id": "1000000034.2.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "76d455e8",
+              "ts_next_chain": "cacb1315",
+              "nft": "d46351362e20320064709f345b04483085debadc56516576ec1d57f5b2eabaab",
+              "service": "query",
+              "result_id": "1000000034.2.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "79aee970",
+              "ts_next_chain": "6b65c3b6",
+              "nft": "dfbd30fbbff5632cd1d776cdf33268875e1b8e7d7cd0350cab8b1e31152b0574",
+              "service": "query",
+              "result_id": "1000000034.2.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "1000000034.2.0",
+      "success": true
+    },
+    {
+      "timestamp": 1780656591603,
+      "tick": 1000000048,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 0,
+      "service": "INPUT",
+      "ps_request": [
+        null,
+        null,
+        {
+          "ps_id": 2,
+          "tick": 1000000048,
+          "ps_thread": 11,
+          "ps_chain": "8040cbdb",
+          "ps_next_chain": "febecc79",
+          "ts_request": [
+            {
+              "ts_id": 0,
+              "ts_thread": 7,
+              "ts_chain": "a031b3a3",
+              "ts_next_chain": "e9e3c3ea",
+              "nft": "561650ea24265cf77b56a279a65b72728dc10596a286f6706c55281977b816c3",
+              "service": "input"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000047,
+          "ps_thread": 16,
+          "ps_chain": "edc46929",
+          "ps_next_chain": "876290f7",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "6117b00d",
+              "ts_next_chain": "7f54e6e1",
+              "nft": "8554e3d40ab8817b547aff8b12c556266cc2f9e676db9cf4e295b47c1a6875f0",
+              "service": "query",
+              "result_id": "1000000046.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000048,
+          "ps_thread": 11,
+          "ps_chain": "8040cbdb",
+          "ps_next_chain": "febecc79",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 0,
+            "in_err": 1,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 7,
+              "ts_chain": "a031b3a3",
+              "ts_next_chain": "e9e3c3ea",
+              "nft": "561650ea24265cf77b56a279a65b72728dc10596a286f6706c55281977b816c3",
+              "service": "input",
+              "result_id": "error"
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "result_id": "error",
+      "success": false
+    },
+    {
+      "timestamp": 1780656592604,
+      "tick": 1000000049,
+      "cycle": 2,
+      "phase": "INDIVIDUAL",
+      "ps_id": 2,
+      "ts_id": 1,
+      "service": "QUERY",
+      "ps_request": [
+        null,
+        null,
+        {
+          "ps_id": 2,
+          "tick": 1000000049,
+          "ps_thread": 12,
+          "ps_chain": "febecc79",
+          "ps_next_chain": "a16923f6",
+          "ts_request": [
+            {
+              "ts_id": 0,
+              "ts_thread": 8,
+              "ts_chain": "e9e3c3ea",
+              "ts_next_chain": "6c552afd",
+              "nft": "561650ea24265cf77b56a279a65b72728dc10596a286f6706c55281977b816c3",
+              "service": "query"
+            }
+          ]
+        }
+      ],
+      "ps_result": [
+        {
+          "ps_id": 0,
+          "tick": 1000000041,
+          "ps_thread": 16,
+          "ps_chain": "2ec46947",
+          "ps_next_chain": "34571fd5",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "17c2dc8f",
+              "ts_next_chain": "b774ca4a",
+              "nft": "ef5ecd6cb5dde03e8b76bb1c40a7d1c504abf761d621f834ae4e42e526b5e70f",
+              "service": "query",
+              "result_id": "1000000040.0.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 1,
+          "tick": 1000000047,
+          "ps_thread": 16,
+          "ps_chain": "edc46929",
+          "ps_next_chain": "876290f7",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {},
+            {},
+            {
+              "ts_id": 2,
+              "ts_thread": 8,
+              "ts_chain": "6117b00d",
+              "ts_next_chain": "7f54e6e1",
+              "nft": "8554e3d40ab8817b547aff8b12c556266cc2f9e676db9cf4e295b47c1a6875f0",
+              "service": "query",
+              "result_id": "1000000046.1.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 2,
+          "tick": 1000000049,
+          "ps_thread": 12,
+          "ps_chain": "febecc79",
+          "ps_next_chain": "a16923f6",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 1,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 8,
+              "ts_chain": "e9e3c3ea",
+              "ts_next_chain": "6c552afd",
+              "nft": "561650ea24265cf77b56a279a65b72728dc10596a286f6706c55281977b816c3",
+              "service": "query",
+              "result_id": "1000000048.2.0"
+            },
+            {},
+            {}
+          ]
+        },
+        {
+          "ps_id": 3,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "262edeb8",
+          "ps_next_chain": "b78c6782",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "89b9dd6a",
+              "ts_next_chain": "49307ef0",
+              "nft": "37a09698e99b600abbb5213dfba3815608c7628911c60ddda3ec908dedba97a0",
+              "service": "query",
+              "result_id": "1000000034.3.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "dba2aa4d",
+              "ts_next_chain": "fd6eb3b1",
+              "nft": "d2fba548289faac28d4bee10fdbad73d3c7b980c9a2591e2bbde253bfa432274",
+              "service": "query",
+              "result_id": "1000000034.3.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "d788d5c2",
+              "ts_next_chain": "80c5909c",
+              "nft": "3d823a01b9ee2a78cf07bfb0b0c0a2a2c59d6a9e1175cba0a13b09947b31b021",
+              "service": "query",
+              "result_id": "1000000034.3.2"
+            }
+          ]
+        },
+        {
+          "ps_id": 4,
+          "tick": 1000000035,
+          "ps_thread": 10,
+          "ps_chain": "be8b647e",
+          "ps_next_chain": "4914b489",
+          "ps_ledger": {
+            "in_total": 0,
+            "q_total": 3,
+            "in_err": 0,
+            "q_err": 0
+          },
+          "ts_result": [
+            {
+              "ts_id": 0,
+              "ts_thread": 6,
+              "ts_chain": "d94df62c",
+              "ts_next_chain": "2ce78d9a",
+              "nft": "9f44fe7885f9b17a95656e315b4896e9ab6fa5fdfc8d792b41a13b8aec82d7ca",
+              "service": "query",
+              "result_id": "1000000034.4.0"
+            },
+            {
+              "ts_id": 1,
+              "ts_thread": 6,
+              "ts_chain": "ec1cc673",
+              "ts_next_chain": "89c668b7",
+              "nft": "9bb27c88599944f1b3c2a0a8f7d39b4d63955d10bf20df4aef83a47e11cb9e13",
+              "service": "query",
+              "result_id": "1000000034.4.1"
+            },
+            {
+              "ts_id": 2,
+              "ts_thread": 6,
+              "ts_chain": "8ab5b1db",
+              "ts_next_chain": "1d944666",
+              "nft": "be150a96e976779cece2d843790a8611be3f70a16e4627b3a4a0d6284e8a2581",
+              "service": "query",
+              "result_id": "1000000034.4.2"
+            }
+          ]
+        }
+      ],
+      "success": true
+    },
+    {
+      "timestamp": 1780656594211,
+      "event": "SHUTDOWN",
+      "tick": 1000000050,
+      "cycle_number": 2,
+      "phase": "INDIVIDUAL",
+      "total_inputs": 0,
+      "total_queries": 440,
+      "total_errors": 52,
+      "created_nfts": 52
+    }
+  ]
+}

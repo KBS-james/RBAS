@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="block.png">
+    <title>RBAS DB contents</title>
+    <style>
+        * {
+            font-family: 'Roboto', monospace;
+            background-color: rgb(0, 0, 0);
+            font-size: 18px;
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            margin: 0;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            min-width: 3500px;
+        }
+
+        header {
+            min-width: 3500px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .logo {
+            font-size: 6rem;
+            text-align: left;
+            padding: 1mm;
+            padding-left: 10mm;
+            background: #404040;
+            color: rgb(50, 160, 240);
+        }
+
+        .navigation-menu {
+            width: 100%;
+            display: flex;
+            background: #404040;
+            align-items: center;
+        }
+
+        .navigation-menu a {
+            margin: 15px;
+            color: rgb(90, 240, 240);
+            text-transform: uppercase;
+            font-size: 2rem;
+            background: #404040;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        .navigation-menu a:hover {
+            background: #202020;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .navigation-menu a.active {
+            background: rgb(50, 160, 240);
+            color: #000;
+        }
+
+        .top {
+            margin: 0;
+        }
+
+        .top5 {
+            width: 100%;
+            display: grid;
+            margin: 0;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 0;
+            gap: 2mm;
+        }
+
+        .top16 {
+            width: 100%;
+            display: grid;
+            margin: 0;
+            grid-template-columns: repeat(16, 1fr);
+            padding: 0;
+            gap: 1mm;
+        }
+
+        .col_10 {
+            margin: 0;
+        }
+
+        .col_11 {
+            margin: 0;
+            margin-bottom: 0;
+        }
+
+        .col_1 {
+            margin: 1mm;
+            margin-bottom: 2mm;
+        }
+
+        .col_2t {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .col_2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin: 1mm;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            color: rgb(50, 160, 240);
+            text-align: left;
+            font-size: 3em;
+            margin: 0;
+            padding-left: 10mm;
+        }
+
+        h2 {
+            text-align: right;
+            font-size: 1em;
+            margin: 1mm;
+            color: rgb(200, 200, 200);
+        }
+
+        h3 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            text-align: center;
+            font-size: 3em;
+            margin: 1mm;
+            padding: 0;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        h4 {
+            color: rgb(90, 240, 240);
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        h5 {
+            border: 1px solid rgb(3, 3, 3);
+            text-align: center;
+            background-color: rgb(40, 40, 40);
+            font-size: 1em;
+            margin: 0;
+            padding: 0;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        h6 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(40, 40, 40);
+            text-align: center;
+            font-size: 1.5em;
+            margin: 0;
+            padding: 0;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        h5:hover, h6:hover {
+            background-color: rgb(80, 80, 80);
+            transform: scale(1.05);
+            z-index: 10;
+            position: relative;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-left: 10px;
+            background-color: #ff4444;
+            transition: background-color 0.3s ease;
+        }
+
+        .status-indicator.online {
+            background-color: #44ff44;
+            box-shadow: 0 0 10px #44ff44;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 2rem;
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">RBAS dashboard <span class="status-indicator" id="status-indicator"></span></div>
+        <nav class="navigation-menu">
+            <a href="index.html">RS sync</a>
+            <a href="db_sync.html">DB sync</a>
+            <a href="db_operation.html">DB operation</a>
+            <a href="ps_summary.html">PS summary</a>
+            <a href="db_16.html" class="active">DB 16</a>
+            <a href="db_summary.html">DB summary</a>
+        </nav>
+    </header>
+
+    <div class="grid">
+        <div class="top5">
+            <div class="col_10">
+                <h1 id="title">RBAS NFT 输入</h1>
+                <h2 id="version">RBAS_poll_RS_working</h2>
+            </div>
+            <div class="col_10">
+                <h4>UTC time</h4>
+                <h3 id="time">2020-02-10 12:34:56</h3>
+            </div>
+            <div class="col_10">
+                <h4>db_tick</h4>
+                <h3 id="tick">12345678</h3>
+            </div>
+            <div class="col_10">
+                <h4>total NFT</h4>
+                <h3 id="total">12345678</h3>
+            </div>
+            <div class="col_10">
+                <h4>newest NFT</h4>
+                <h3 id="newest">12345678</h3>
+            </div>
+        </div>
+
+        <div class="error-message" id="error-message">Connection Error - Retrying...</div>
+
+        <div class="top16" id="headers-container">
+        </div>
+
+        <div class="top16" id="nft-container">
+        </div>
+    </div>
+
+    <script>
+        const COLUMN_COUNT = 16;
+        const ROW_COUNT = 70;
+
+        function generateHeaders() {
+            const container = document.getElementById('headers-container');
+            let html = '';
+            const hexChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+            
+            for (let i = 0; i < COLUMN_COUNT; i++) {
+                html += `<div class="col_1">
+                    <h4>${hexChars[i]} total</h4>
+                    <h6 class="total" data-col="${i}">0</h6>
+                    <h4>NFT</h4>
+                </div>`;
+            }
+            
+            container.innerHTML = html;
+        }
+
+        function generateNFTGrid() {
+            const container = document.getElementById('nft-container');
+            let html = '';
+            
+            for (let col = 0; col < COLUMN_COUNT; col++) {
+                html += `<div class="col_1">`;
+                for (let subCol = 0; subCol < 7; subCol++) {
+                    html += `<div class="col_1">`;
+                    for (let row = 0; row < 10; row++) {
+                        const index = subCol * 10 + row;
+                        html += `<h5 class="nft" data-col="${col}" data-row="${index}">........</h5>`;
+                    }
+                    html += `</div>`;
+                }
+                html += `</div>`;
+            }
+            
+            container.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateHeaders();
+            generateNFTGrid();
+        });
+    </script>
+    <script src="3web_db_16.js"></script>
+</body>
+</html>

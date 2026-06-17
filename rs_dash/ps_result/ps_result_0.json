@@ -1,0 +1,33 @@
+{
+  "tick": 1013905110,
+  "ps_id": 0,
+  "ps_thread": 29,
+  "ps_chain": "aa28c6603a19b3df",
+  "ps_next_chain": "828037ef9354c670",
+  "ps_ledger": {
+    "in_total": 30,
+    "q_total": 29,
+    "in_err": 29,
+    "q_err": 29,
+    "ps_thread": 29
+  },
+  "ts_result": [
+    {
+      "ts_id": 0,
+      "ts_thread": 29,
+      "ts_chain": "",
+      "ts_next_chain": "e33e8f1fef32bb63",
+      "ts_ledger": {
+        "in_total": 30,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      },
+      "result": {
+        "nft": "e33e8f1fef32bb635e6743acbeb620e6ebd2d428e176d11ceba44ab9bb3e6dc1",
+        "service": "input",
+        "result_id": "1013905110.0.0"
+      }
+    }
+  ]
+}

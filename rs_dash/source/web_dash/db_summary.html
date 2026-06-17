@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="shortcut icon" type="image/png" href="block.png">
+<title>RBAS DB summary </title>
+
+<head>
+    <style>
+        * {
+            font-family: roboto, monospace;
+            background-color: rgb(0, 0, 0);
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+        }
+
+        .grid {
+            margin: 0mm;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            min-width: 3500px;
+        }
+
+        header {
+            min-width: 3500px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .inner-width {
+            max-width: 300rem;
+            min-width: 70rem;
+            padding: 0 10px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 6rem;
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            padding-left: 10mm;
+            background: #404040;
+            color: rgb(50, 160, 240)
+        }
+
+        .navigation-menu {
+            width: 100%;
+            display: flex;
+            background: #404040;
+        }
+
+        .navigation-menu a {
+            margin: 30px;
+            color: rgb(90, 240, 240);
+            text-transform: uppercase;
+            font-size: 3rem;
+            background: #404040;
+        }
+
+        .navigation-menu a:hover {
+            background: #202020;
+            color: #fff;
+            transform: scale(1.5);
+        }
+
+        .navigation-menu i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+
+        .top {
+            margin: 0mm;
+            width: 100%;
+        }
+
+        .top3 {
+            margin-top: 0mm;
+            width: 100%;
+            display: grid;
+            margin: 2mm;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .top4 {
+            display: grid;
+            margin: 0mm;
+            grid-template-columns: repeat(4, 1fr);
+            width: 99%;
+        }
+
+        .top5 {
+            display: grid;
+            margin: 2mm;
+            grid-template-columns: repeat(6, 1fr);
+            width: 99%;
+        }
+
+        .col_1 {
+            margin-bottom: 0mm;
+            margin-right: 0mm;
+            padding: 2mm;
+            padding-top: 0mm;
+            padding-bottom: 5mm;
+        }
+
+        .col_2 {
+            grid-column: 2/4;
+            margin: 10mm;
+            margin-top: 0mm;
+            margin-bottom: 0mm;
+        }
+
+        .col_4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 2mm;
+        }
+
+        .col_8 {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            margin: 2mm;
+        }
+
+        .col_82 {
+            grid-column: 2/4;
+        }
+
+        .col_83 {
+            grid-column: 4/5;
+        }
+
+        .col_84 {
+            grid-column: 5/9;
+        }
+
+        h1 {
+            color: rgb(32, 164, 243);
+            text-align: left;
+            font-size: 3em;
+            margin: 3mm;
+            margin-bottom: 0mm;
+        }
+
+        h2 {
+            color: rgb(89, 248, 232);
+            text-align: left;
+            font-size: 2em;
+            margin: 2mm;
+            margin-bottom: 1mm;
+        }
+
+        h3 {
+            color: rgb(89, 248, 232);
+            text-align: center;
+            font-size: 2em;
+            margin: 0mm;
+        }
+
+        h4 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            text-align: center;
+            font-size: 2em;
+            margin: 0mm;
+            padding: 1mm;
+        }
+
+        h5 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            text-align: center;
+            font-size: 2rem;
+            margin: 0mm;
+            padding: 1mm;
+            padding-left: 5mm;
+            padding-right: 5mm;
+        }
+
+        h6 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 5mm;
+            margin-top: 10mm;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">RBAS dashboard </div>
+        <nav class="navigation-menu">
+            <a href="index.html"> RS sync</a>
+            <a href="db_sync.html">DB sync</a>
+            <a href="db_operation.html"> DB operation</a>
+            <a href="ps_summary.html"> PS summary</a>
+            <a href="db_16.html">DB 16</a>
+            <a href="db_summary.html"> DB summary</a>
+        </nav>
+    </header>
+
+    <div class="grid">
+        <div class="top3">
+            <div class="col_1">
+                <h1 id="title">RBAS 数据库摘要 </h1>
+                <div class="col_1">
+                    <h2>UTC time</h2>
+                    <h4 id="time">2020-02-10 12:34:56</h4>
+                    <h2>Tick</h2>
+                    <h4 id="tick">1000000000</h4>
+                    <h2>HASH </h2>
+                    <h4 id="hash">1234567890abcdef1234567890abcdef 1234567890abcdef1234567890abcdef </h4>
+                    <h2>added_nft_cnt</h2>
+                    <h4 id="nft_cnt">1234</h4>
+                </div>
+
+                <h1>DB ledger</h1>
+                <div class="col_1">
+                    <h2>in_total</h2>
+                    <h4 id="in_total">1234</h4>
+                    <h2>q_total</h2>
+                    <h4 id="q_total">1234</h4>
+                    <h2>in_error</h2>
+                    <h4 id="in_err">123</h4>
+                    <h2>q_error</h2>
+                    <h4 id="q_err">123</h4>
+                </div>
+
+
+                <h1>log</h1>
+                <div class="col_4">
+                    <h3>time</h3>
+                    <h3>tick</h3>
+                    <h3>added_nft</h3>
+                    <h3>in_total</h3>
+                </div>
+                <div class="col_4">
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                </div>
+                <div class="col_4">
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                    <h5 class="time">0</h5>
+                    <h5 class="tick">1234... </h5>
+                    <h5 class="added">1000</h5>
+                    <h5 class="in_total">1000</h5>
+
+                </div>
+
+            </div>
+
+            <div class="col_2">
+                <h1>NFT database </h1>
+                <div class="col_8">
+                    <h3>index</h3>
+                    <h3 class="col_82">tick</h3>
+                    <h3 class="col_83">DAO (ps.ts)</h3>
+                    <h3 class="col_84">NFT</h3>
+                </div>
+
+                <!-- 第1-10行 (index 0-9) -->
+                <div class="col_8">
+                    <h5 class="index">0</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">1</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">2</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">3</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">4</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">5</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">6</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">7</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">8</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">9</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+                </div>
+
+                <!-- 第11-20行 (index 10-19) -->
+                <div class="col_8">
+                    <h5 class="index">10</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">11</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">12</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">13</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">14</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">15</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">16</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">17</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">18</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">19</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+                </div>
+
+                <!-- 第21-30行 (index 20-29) -->
+                <div class="col_8">
+                    <h5 class="index">20</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">21</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">22</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">23</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">24</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">25</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">26</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">27</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">28</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">29</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+                </div>
+
+                <!-- 第31-40行 (index 30-39) -->
+                <div class="col_8">
+                    <h5 class="index">30</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">31</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">32</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">33</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">34</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">35</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">36</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">37</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">38</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+
+                    <h5 class="index">39</h5>
+                    <div class="col_82"><h5 class="tick_">1000000000</h5></div>
+                    <div class="col_83"><h5 class="dao">999.999</h5></div>
+                    <div class="col_84"><h5 class="nft">1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef</h5></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="5web_db_summary.js"> </script>
+</body>
+
+</html>

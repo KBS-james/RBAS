@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="block.png">
+    <title>RBAS DB sync</title>
+    <style>
+        * {
+            font-family: 'Roboto', monospace;
+            background-color: rgb(0, 0, 0);
+            font-size: 12.6px;
+            color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            margin: 0;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            min-width: 3700px;
+        }
+
+        header {
+            min-width: 3500px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .logo {
+            font-size: 6.3rem;
+            text-align: left;
+            width: 100%;
+            height: 100%;
+            padding: 2.1mm;
+            padding-left: 10.5mm;
+            background: #404040;
+            color: rgb(50, 160, 240);
+        }
+
+        .navigation-menu {
+            width: 100%;
+            display: flex;
+            background: #404040;
+            align-items: center;
+        }
+
+        .navigation-menu a {
+            margin: 15.75px;
+            color: rgb(90, 240, 240);
+            text-transform: uppercase;
+            font-size: 2.1rem;
+            background: #404040;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8.4px 16.8px;
+            border-radius: 8.4px;
+            white-space: nowrap;
+        }
+
+        .navigation-menu a:hover {
+            background: #202020;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .navigation-menu a.active {
+            background: rgb(50, 160, 240);
+            color: #000;
+        }
+
+        .top {
+            margin: 0;
+            width: 100%;
+        }
+
+        .top3 {
+            margin: 10.5mm;
+            margin-bottom: -10.5mm;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-bottom: 3.15mm;
+            gap: 2.1mm;
+        }
+
+        .top9 {
+            margin: 1.8mm;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            padding-bottom: 3mm;
+            gap: 0.9mm;
+        }
+
+        .top16 {
+            display: grid;
+            margin: 0.9mm;
+            padding: 0;
+            grid-template-columns: repeat(18, 1fr);
+            gap: 0.9px;
+        }
+
+        .col_1 {
+            margin: 0.9mm;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .col_2 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        textarea {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            width: 70%;
+            font-size: 2.1em;
+            margin: 15.75mm;
+            height: 73.5mm;
+            margin-top: 2.1mm;
+            margin-bottom: 2.1mm;
+            padding: 3.15mm;
+            resize: horizontal;
+        }
+
+        h1 {
+            color: rgb(50, 160, 240);
+            text-align: left;
+            padding-left: 10.5mm;
+            font-size: 4.2em;
+            margin: 0;
+            margin-bottom: -5.25mm;
+        }
+
+        h2 {
+            text-align: right;
+            font-size: 2.1em;
+            margin: 5.25mm;
+            margin-top: -10.5mm;
+            color: rgb(200, 200, 200);
+        }
+
+        h3 {
+            color: rgb(90, 240, 240);
+            text-align: left;
+            font-size: 2.1em;
+            margin: 0.945mm;
+            margin-top: 2.835mm;
+        }
+
+        h4 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(90, 90, 90);
+            text-align: center;
+            font-size: 3.15em;
+            margin: 8%;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0.945mm;
+            color: rgb(255, 255, 255);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        h5 {
+            color: rgb(90, 240, 240);
+            text-align: left;
+            font-size: 2.1em;
+            margin: 0.945mm;
+            margin-top: 2.835mm;
+            margin-left: 4.725mm;
+        }
+
+        h6 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(40, 40, 40);
+            text-align: center;
+            font-size: 2.1em;
+            margin: 0;
+            margin-left: 7.56mm;
+            margin-right: 2.835mm;
+            padding: 0.4725mm;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        h7 {
+            border: 1px solid rgb(3, 3, 3);
+            background-color: rgb(40, 40, 40);
+            text-align: center;
+            font-size: 1.17rem;
+            margin: 0.18mm;
+            padding: 0.18mm;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+        }
+
+        h6:hover, h7:hover {
+            background-color: rgb(80, 80, 80);
+            transform: scale(1.05);
+            z-index: 10;
+            position: relative;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            margin-left: 10.5px;
+            background-color: #ff4444;
+            transition: background-color 0.3s ease;
+        }
+
+        .status-indicator.online {
+            background-color: #44ff44;
+            box-shadow: 0 0 10.5px #44ff44;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 1.8rem;
+            text-align: center;
+            padding: 18px;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" id="logo">RBAS dashboard <span class="status-indicator" id="status-indicator"></span></div>
+        <nav class="navigation-menu">
+            <a href="index.html">RS sync</a>
+            <a href="db_sync.html" class="active">DB sync</a>
+            <a href="db_operation.html">DB operation</a>
+            <a href="ps_summary.html">PS summary</a>
+            <a href="db_16.html">DB 16</a>
+            <a href="db_summary.html">DB summary</a>
+        </nav>
+    </header>
+
+    <div class="grid">
+        <div class="top">
+            <div class="col_1">
+                <h1 id="rs_id">RBAS 數據庫同步</h1>
+                <h2 id="version">RBAS_poll_RS_working</h2>
+                <div class="top3">
+                    <div class="col_1">
+                        <h3>chain</h3>
+                        <h4 id="chain">9a912413024f8687a4b856cf</h4>
+                        <h3>block_hash</h3>
+                        <h4 id="block">8bd2a5b855f4c44da110e8c8a352912b391d7b404916f5c295c733386c4b10b8</h4>
+                        <h3>next chain</h3>
+                        <h4 id="next_chain">9a912413024f8687a4b856cf</h4>
+                    </div>
+
+                    <div class="col_1">
+                        <h3>UTC time</h3>
+                        <h4 id="time">2</h4>
+                        <h3>db_tick</h3>
+                        <h4 id="rs_tick">1234567890</h4>
+                        <h3>DB status (O:sync)</h3>
+                        <h4 id="status">O O O O O O O O O</h4>
+                    </div>
+                    
+                    <div class="col_1">
+                        <h3>input total</h3>
+                        <h4 id="rs_in_total">123456789</h4>
+                        <h3>input error</h3>
+                        <h4 id="rs_in_err">12345</h4>
+                        <h3>query total</h3>
+                        <h4 id="rs_q_total">1234567</h4>
+                        <h3>query error</h3>
+                        <h4 id="rs_q_err">1234</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col_1">
+                <h1>each Database status</h1>
+                <div class="error-message" id="error-message">Connection Error - Retrying...</div>
+                <div class="top9" id="db-status-container">
+                </div>
+            </div>
+
+            <div class="col_1">
+                <h1>each DB Log</h1>
+                <div class="top16" id="log-header">
+                    <h3>time</h3>
+                    <h3>db_tick</h3>
+                    <h3>status</h3>
+                    <h3>in_total</h3>
+                    <h3>q_total</h3>
+                    <h3>in_err</h3>
+                    <h3>q_err</h3>
+                    <h3>DB1_hash</h3>
+                    <h3>DB2_hash</h3>
+                    <h3>DB3_hash</h3>
+                    <h3>DB4_hash</h3>
+                    <h3>DB5_hash</h3>
+                    <h3>DB6_hash</h3>
+                    <h3>DB7_hash</h3>
+                    <h3>DB8_hash</h3>
+                    <h3>DB9_hash</h3>
+                    <h3>chain</h3>
+                    <h3>next_chain</h3>
+                </div>
+                <div class="top16" id="log-container">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateDBStatus() {
+            const container = document.getElementById('db-status-container');
+            let html = '';
+            
+            for (let db = 0; db < 9; db++) {
+                html += `<div class="col_2">
+                    <h3>DB_${db}</h3>
+                    <h5>db_tick</h5>
+                    <h6 class="db_tick" data-db="${db}">.</h6>
+                    <h5>block hash</h5>
+                    <h6 class="block" data-db="${db}">.</h6>
+                    <h5>input total</h5>
+                    <h6 class="db_in_total" data-db="${db}">.</h6>
+                    <h5>input error</h5>
+                    <h6 class="db_in_err" data-db="${db}">.</h6>
+                    <h5>query total</h5>
+                    <h6 class="db_q_total" data-db="${db}">.</h6>
+                    <h5>query error</h5>
+                    <h6 class="db_q_err" data-db="${db}">.</h6>
+                </div>`;
+            }
+            
+            container.innerHTML = html;
+        }
+
+        function generateLogRows() {
+            const container = document.getElementById('log-container');
+            let html = '';
+            
+            for (let row = 0; row < 30; row++) {
+                html += `<h7 class="time" data-row="${row}">.</h7>
+                         <h7 class="tick" data-row="${row}">.</h7>
+                         <h7 class="status" data-row="${row}">.</h7>
+                         <h7 class="in_total" data-row="${row}">.</h7>
+                         <h7 class="q_total" data-row="${row}">.</h7>
+                         <h7 class="in_err" data-row="${row}">.</h7>
+                         <h7 class="q_err" data-row="${row}">.</h7>
+                         <h7 class="rs1_hash" data-row="${row}">.</h7>
+                         <h7 class="rs2_hash" data-row="${row}">.</h7>
+                         <h7 class="rs3_hash" data-row="${row}">.</h7>
+                         <h7 class="rs4_hash" data-row="${row}">.</h7>
+                         <h7 class="rs5_hash" data-row="${row}">.</h7>
+                         <h7 class="rs6_hash" data-row="${row}">.</h7>
+                         <h7 class="rs7_hash" data-row="${row}">.</h7>
+                         <h7 class="rs8_hash" data-row="${row}">.</h7>
+                         <h7 class="rs9_hash" data-row="${row}">.</h7>
+                         <h7 class="chain" data-row="${row}">.</h7>
+                         <h7 class="next_chain" data-row="${row}">.</h7>`;
+            }
+            
+            container.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateDBStatus();
+            generateLogRows();
+        });
+    </script>
+    <script src="2web_db_sync.js"></script>
+</body>
+</html>

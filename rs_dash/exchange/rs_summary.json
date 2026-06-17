@@ -1,0 +1,124 @@
+{
+  "rs_id": 8,
+  "tick": 1013905110,
+  "status": "- - - - - - - - -",
+  "db_summary": {
+    "0": {
+      "db_id": 0,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "1": {
+      "db_id": 1,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "2": {
+      "db_id": 2,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "3": {
+      "db_id": 3,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "4": {
+      "db_id": 4,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "5": {
+      "db_id": 5,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "6": {
+      "db_id": 6,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "7": {
+      "db_id": 7,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    },
+    "8": {
+      "db_id": 8,
+      "tick": 1013905110,
+      "hash": "828037ef9354c6709fe8026cf02460d0a991e22c1df72c2cf897da3661b96677",
+      "chain": "aa28c6603a19b3df",
+      "next_chain": "828037ef9354c670",
+      "ledger": {
+        "in_total": 29,
+        "q_total": 29,
+        "in_err": 29,
+        "q_err": 29
+      }
+    }
+  }
+}
