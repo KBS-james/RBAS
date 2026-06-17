@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deterministic Tick / Time Utility</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --border: #334155;
+            --success: #34d399;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--text-main);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .grid-live {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .live-stat {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .live-stat label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .live-stat span {
+            font-family: monospace;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        .live-stat span.highlight {
+            color: var(--success);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        input[type="text"], input[type="number"], input[type="datetime-local"] {
+            flex: 1;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.625rem 0.75rem;
+            color: var(--text-main);
+            font-family: monospace;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+        }
+
+        button {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 6px;
+            padding: 0.625rem 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .result-box {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background-color: rgba(15, 23, 42, 0.6);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            display: none;
+        }
+
+        .result-box.error {
+            border-left-color: #ef4444;
+            color: #fca5a5;
+        }
+
+        .result-box label {
+            margin-bottom: 0.15rem;
+        }
+
+        .result-value {
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tick & Time Engine</h1>
+    <div class="subtitle">Phase-aligned tracking (1 Tick = 10s | Boundary swap at ..5s)</div>
+
+    <div class="card">
+        <div class="card-title">Live Node Monitor</div>
+        <div class="grid-live">
+            <div class="live-stat">
+                <label>System UTC Time</label>
+                <span id="live-time">--:--:--</span>
+            </div>
+            <div class="live-stat">
+                <label>Active Calculated Tick</label>
+                <span id="live-tick" class="highlight">----------</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Convert Tick to UTC Time</div>
+        <div class="form-group">
+            <label for="tick-input">Enter Tick Number (e.g., 1000000000)</label>
+            <div class="input-group">
+                <input type="number" id="tick-input" placeholder="1014018086" min="1000000000" max="1999999999">
+                <button onclick="handleTickToTime()">Convert</button>
+            </div>
+        </div>
+        <div id="tick-to-time-result" class="result-box">
+            <label>Anchor UTC Datetime:</label>
+            <div class="result-value" id="t2t-value"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Convert UTC Time to Tick</div>
+        <div class="form-group">
+            <label for="time-input">Select Date and Time</label>
+            <div class="input-group">
+                <input type="datetime-local" id="time-input" step="1">
+                <button onclick="handleTimeToTick()">Calculate Tick</button>
+            </div>
+        </div>
+        <div id="time-to-tick-result" class="result-box">
+            <label>Deterministic Tick Result:</label>
+            <div class="result-value" id="t2u-value"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // --- BROWSER COMPATIBLE CORE ALGORITHM ENGINE ---
+    const tickModule = {
+        START_TICK: 1000000000,
+        START_DATE: new Date(Date.UTC(2022, 0, 1, 0, 0, 0)),
+        SECONDS_PER_TICK: 10,
+
+        isLeapYear(year) {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        },
+
+        getDaysInMonth(year, month) {
+            const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            if (month === 2 && this.isLeapYear(year)) return 29;
+            return daysInMonth[month - 1];
+        },
+
+        tickToTime(tick) {
+            if (tick < this.START_TICK) {
+                throw new Error(`Tick ${tick} matches a pre-epoch interval.`);
+            }
+            
+            const tickDiff = tick - this.START_TICK;
+            const totalSeconds = tickDiff * this.SECONDS_PER_TICK;
+            const totalDays = Math.floor(totalSeconds / 86400);
+            const remainingSeconds = totalSeconds % 86400;
+            
+            const hour = Math.floor(remainingSeconds / 3600);
+            const minute = Math.floor((remainingSeconds % 3600) / 60);
+            const second = remainingSeconds % 60;
+            
+            let year = 2022;
+            let month = 1;
+            let day = 1 + totalDays;
+            
+            while (true) {
+                const daysInMonth = this.getDaysInMonth(year, month);
+                if (day <= daysInMonth) break;
+                day -= daysInMonth;
+                month++;
+                if (month > 12) {
+                    month = 1;
+                    year++;
+                }
+            }
+            
+            return { tick, year, month, day, hour, minute, second };
+        },
+
+        tickToISOString(tick) {
+            const time = this.tickToTime(tick);
+            return `${time.year}-${String(time.month).padStart(2, '0')}-${String(time.day).padStart(2, '0')} ${String(time.hour).padStart(2, '0')}:${String(time.minute).padStart(2, '0')}:${String(time.second).padStart(2, '0')} UTC`;
+        },
+
+        dateToTick(date) {
+            let dateObj = (date instanceof Date) ? date : new Date(date);
+            
+            if (isNaN(dateObj.getTime())) {
+                throw new Error("Invalid datetime string format parsed.");
+            }
+            if (dateObj < this.START_DATE) {
+                throw new Error("Target time precedes system start boundary (2022-01-01 UTC).");
+            }
+            
+            const diffSeconds = Math.floor((dateObj - this.START_DATE) / 1000);
+            
+            // Phase adjustment calculation: moves boundary swaps cleanly to ..5 seconds mark
+            const alignedZeroSeconds = Math.floor((diffSeconds + 5) / 10) * 10;
+            
+            return this.START_TICK + (alignedZeroSeconds / this.SECONDS_PER_TICK);
+        }
+    };
+
+    // --- UI VIEW LOGIC AND DOM MANIPULATION ---
+    // Initialize inputs on load
+    window.addEventListener('DOMContentLoaded', () => {
+        const now = new Date();
+        // Setup default time picker field to local context representation string
+        const offset = now.getTimezoneOffset() * 60000;
+        const localISOTime = (new Date(now - offset)).toISOString().slice(0, -1);
+        document.getElementById('time-input').value = localISOTime.split('.')[0];
+        
+        // Start running the unified monitor tick interface loop
+        runLiveMonitor();
+        setInterval(runLiveMonitor, 1000);
+    });
+
+    function runLiveMonitor() {
+        const now = new Date();
+        
+        // Build crisp readable real-time timestamp display
+        const timeStr = `${String(now.getUTCHours()).padStart(2, '0')}:${String(now.getUTCMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')} UTC`;
+        document.getElementById('live-time').innerText = timeStr;
+        
+        // Calculate the current active transaction block tick
+        try {
+            const activeTick = tickModule.dateToTick(now);
+            document.getElementById('live-tick').innerText = activeTick;
+        } catch(e) {
+            document.getElementById('live-tick').innerText = "Execution Error";
+        }
+    }
+
+    function handleTickToTime() {
+        const inputElement = document.getElementById('tick-input');
+        const resultCard = document.getElementById('tick-to-time-result');
+        const textValue = document.getElementById('t2t-value');
+        
+        const rawTick = parseInt(inputElement.value, 10);
+        
+        if (!rawTick || isNaN(rawTick)) {
+            showResult(resultCard, textValue, "Please provide a valid numeric value.", true);
+            return;
+        }
+
+        try {
+            const outputString = tickModule.tickToISOString(rawTick);
+            showResult(resultCard, textValue, outputString, false);
+        } catch (err) {
+            showResult(resultCard, textValue, err.message, true);
+        }
+    }
+
+    function handleTimeToTick() {
+        const inputElement = document.getElementById('time-input');
+        const resultCard = document.getElementById('time-to-tick-result');
+        const textValue = document.getElementById('t2u-value');
+        
+        if (!inputElement.value) {
+            showResult(resultCard, textValue, "Please select an input date/time framework.", true);
+            return;
+        }
+
+        try {
+            // Read local value configuration from picker, map directly into absolute JS Date Instance
+            const targetedTime = new Date(inputElement.value);
+            const generatedTick = tickModule.dateToTick(targetedTime);
+            
+            showResult(resultCard, textValue, generatedTick, false);
+        } catch (err) {
+            showResult(resultCard, textValue, err.message, true);
+        }
+    }
+
+    function showResult(box, target, message, isError) {
+        box.style.display = "block";
+        target.innerText = message;
+        if (isError) {
+            box.classList.add('error');
+        } else {
+            box.classList.remove('error');
+        }
+    }
+</script>
+
+</body>
+</html>
